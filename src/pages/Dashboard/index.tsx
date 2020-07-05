@@ -68,11 +68,7 @@ const Dashboard: React.FC = () => {
 
       const formatedFoods = response.data.map(food => {
         return {
-          id: food.id,
-          name: food.name,
-          description: food.description,
-          price: food.price,
-          thumbnail_url: food.thumbnail_url,
+          ...food,
           formattedPrice: formatValue(food.price),
         };
       });
